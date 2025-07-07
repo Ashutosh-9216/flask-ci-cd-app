@@ -11,7 +11,8 @@ pipeline {
         stage('Install Dependencies & Test') {
             steps {
                 sh 'pip3 install --break-system-packages -r requirements.txt'
-                sh 'pytest'
+                sh 'export PATH=$PATH:/var/lib/jenkins/.local/bin && pytest'
+
             }
         }
 
